@@ -1,0 +1,42 @@
+.body-home {
+  background-color: #3d3d3d;
+}
+
+a {
+  text-decoration: none !important;
+}
+.div-home {
+  padding-top: 10px;
+}
+
+.div-home h1 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.div-jeux {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.blocs-jeux {
+  border: 2px solid;
+  border-color: #ffba59;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: whitesmoke;
+  box-shadow: none;
+  background-color: #ffba59;
+}
+
+h2 .blocs-jeux {
+  opacity: 1 !important;
+}
+.blocs-jeux:hover {
+  background: rgba(255, 186, 89, 0.736);
+  border-color: white;
+}
