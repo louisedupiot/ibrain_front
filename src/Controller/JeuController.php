@@ -32,7 +32,7 @@ class JeuController extends AbstractController
         ]);
     }
 
-   #[Route('/jeu3_game', name: 'jeu_calcul')]
+   #[Route('/jeu3_game', name: 'jeu_jeu3')]
     public function jeu3_game(): Response
     {
         return $this->render('jeu/jeu3.html.twig',[
