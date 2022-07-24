@@ -40,3 +40,7 @@ h2 .blocs-jeux {
   background: rgba(255, 186, 89, 0.736);
   border-color: white;
 }
+.swal2-styled.swal2-confirm
+{
+  background-color: #e3b947 !important;
+}
