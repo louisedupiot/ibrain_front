@@ -1,6 +1,5 @@
 {% include 'base.html.twig' %}
 
-{% block title %}Hello JeuController!{% endblock %}
 
 {% block body %}
 <style>
@@ -11,10 +10,63 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    <h2> JEU 3 </h2>
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/ayoub/Desktop/IPSSI/projet-ibrain/src/Controller/JeuController.php'|file_link(0) }}">src/Controller/JeuController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/ayoub/Desktop/IPSSI/projet-ibrain/templates/jeu/index.html.twig'|file_link(0) }}">templates/jeu/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <h2> MEMORY </h2>
+		<div>
+			<table>
+				<tr>
+					<td>Hauteur (11 max)</td>
+					<td>
+						<input 	type="number" 
+								value="8" 
+								placeholder="Largeur"
+								id="x"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Largeur (11 max)</td>
+					<td>
+						<input 	type="number" 
+								value="8" 
+								placeholder="Hauteur"
+								id="y"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Nombre de mines</td>
+					<td>
+						<input 	type="number" 
+								value="8" 
+								placeholder="Nombre de mines"
+								id="nb_mine"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td>
+						<input 	type="button" 
+								value="Lancer la partie" 
+								onClick="changerTerrain()"/>
+					</td>
+				</tr>
+			</table>
+		</diV>
+		
+		<div>
+			<h1>Règles du jeu</h1>
+			<ul>
+				<li>Ne clique pas sur les bombes qui sont symbolisées par <img src=../assets/images/bomb_logo.png  width='30px' height='30px'></li>
+				<li>Clic gauche pour tenter la case</li>
+				<li>Clic droit pour poser/enlever un drapeau</li>
+			</ul>
+		</div>
+         <div id="timer"></div>
+		
+		<div id="plateau">
+		</div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
+		<script src="{{ asset('/assets/js/demineur.js') }}"></script>
+    </div>
 {% endblock %}

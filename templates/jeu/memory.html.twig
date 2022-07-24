@@ -1,72 +1,21 @@
 {% include 'base.html.twig' %}
-
+<link rel="stylesheet" href="../assets/css/MemoryStyle.css" />
+{% block title %}Hello JeuController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    <h2> MEMORY </h2>
-		<div>
-			<table>
-				<tr>
-					<td>Hauteur (11 max)</td>
-					<td>
-						<input 	type="number" 
-								value="8" 
-								placeholder="Largeur"
-								id="x"/>
-					</td>
-				</tr>
-				
-				<tr>
-					<td>Largeur (11 max)</td>
-					<td>
-						<input 	type="number" 
-								value="8" 
-								placeholder="Hauteur"
-								id="y"/>
-					</td>
-				</tr>
-				
-				<tr>
-					<td>Nombre de mines</td>
-					<td>
-						<input 	type="number" 
-								value="8" 
-								placeholder="Nombre de mines"
-								id="nb_mine"/>
-					</td>
-				</tr>
-				
-				<tr>
-					<td></td>
-					<td>
-						<input 	type="button" 
-								value="Lancer la partie" 
-								onClick="changerTerrain()"/>
-					</td>
-				</tr>
-			</table>
-		</diV>
+        <div class="game">
+            <div class="controls">
+                <button>Start</button>
+                <div class="stats">
+                    <div class="moves">0 moves</div>
+                    <div class="timer">time: 0 sec</div>
+                </div>
+            </div>
+            <div class="board-container">
+                <div class="board" data-dimension="4"></div>
+                <div class="win">You won!</div>
+            </div>
+        </div>
 		
-		<div>
-			<h1>Règles du jeu</h1>
-			<ul>
-				<li>Ne clique pas sur les bombes qui sont symbolisées par <img src=../assets/images/bomb_logo.png  width='30px' height='30px'></li>
-				<li>Clic gauche pour tenter la case</li>
-				<li>Clic droit pour poser/enlever un drapeau</li>
-			</ul>
-		</div>
-         <div id="timer"></div>
-		
-		<div id="plateau">
-		</div>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
-		<script src="{{ asset('/assets/js/demineur.js') }}"></script>
-    </div>
+		<script src="{{ asset('/assets/js/MemoryGame.js') }}"></script>
 {% endblock %}
