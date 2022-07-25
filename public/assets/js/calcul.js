@@ -11,7 +11,7 @@ let counter = 0;
 document.getElementById('levelSetup').innerHTML=`
 <div class="d-flex justify-content-between p-5">
     <div class="border border-dark p-2">
-        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Difficulté</p>
+        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Symbole</p>
         <button class="btn btn-primary" value='+' onclick="setExpression(this)">+</button>
         <button class="btn btn-primary" value='-' onclick="setExpression(this)">-</button>
         <button class="btn btn-primary" value='x' onclick="setExpression(this)">x</button>
@@ -43,12 +43,6 @@ function setLevel(lev){
       case '3':
         randomRange = 1001;
         break;
-      case '4':
-        randomRange = 10001;
-        break;
-      case '5':
-        randomRange = 100001;
-        break;
     }
     startTestQuestion();
   }
@@ -62,9 +56,11 @@ function startTestQuestion(){
 
 function showScoreInformation(){
     document.getElementById('score').innerHTML=`
+    <p class="m-0">Question : ${counter}/10</p>
     <p class="m-0">Score : ${score}/10</p>
     <p class="m-0">Expression : ${expression} </p>
     <p class="m-0">Niveau : ${level}</p>
+    
     `;
   }
 
@@ -84,9 +80,6 @@ function showScoreInformation(){
         break;
       case 'x': 
         result = number1 * number2;
-      break;
-        case '/':
-        result = number1 / number2;
         break;
     };
     testQuestion();
@@ -105,7 +98,9 @@ function showScoreInformation(){
       </div>
       <input type="number" id="playerInput" class="form-control" style="font-size: 40px;">
       <div class="input-group-append">
-        <button class="btn btn-success" style="font-size: 40px;" onclick="setUserInput()">Valider</button>
+        <button class="btn btn-success" style="font-size: 30px;" onclick="setUserInput()">Valider</button>
+        <button style="font-size: 30px;" onclick="location.reload()">Retour</button>
+
       </div>
     </div>
     `;
@@ -146,7 +141,7 @@ setTimeout(calculateTest,3000)
     document.getElementById('score').innerHTML='';
     document.getElementById('result').innerHTML=`
     <div class="p-5">
-    <div class="p-3 text-center bg-warning text-white" style="font-size: 40px;">Test términé : ton score est de ${score}/10</div>
+    <div class="p-3 text-center bg-warning text-white" style="font-size: 40px;">Test terminé : ton score est de ${score}/10</div>
     </div>
     `;
 }

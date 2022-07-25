@@ -8,17 +8,19 @@
       <!-- affiche le score du joueur -->
       <h2>Ibrain</h2>
       <div id="score">
-        <p class="m-0">Score : 10/10</p>
+        <p class="m-0">Question : 0/10</p>
+        <p class="m-0">Score : 0/10</p>
         <p class="m-0">Expression : x </p>
-        <p class="m-0">Niveau : 1</p>
+        <p class="m-0">Niveau : 0</p>
       </div>
+      <h1 class="m-0">  Selectionne un Symbole et un niveau </h1>
     </div>
  
     <div id="levelSetup">
       <!-- affiche le niveau de difficulté -->
       <div class="d-flex justify-content-between p-5">
         <div class="border border-dark p-2">
-        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Difficulté</p>
+        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Symbole</p>
         <button class="btn btn-primary" value='+' onclick="setExpression(this)">+</button>
         <button class="btn btn-primary" value='-' onclick="setExpression(this)">-</button>
         <button class="btn btn-primary" value='x' onclick="setExpression(this)">x</button>
@@ -32,24 +34,18 @@
         </div>
         </div>
     </div>
- 
+
     <div id="Calcul" >
       <!-- affiche le calcul à faire -->
       <div class="input-group input-group-lg p-5">
-        <div class="input-group-prepend">
-          <span class="input-group-text" style="font-size: 40px;">5 x 8 =</span>
-        </div>
-        <input type="number" id="playerInput" class="form-control" style="font-size: 40px;">
-        <div class="input-group-append">
-          <button class="btn btn-success" style="font-size: 40px;" onclick="setUserInput()">Valider</button>
-        </div>
+
       </div>     
     </div>
- 
+  </div>
+
     <div id="result" >
       <!-- affiche le résulat si bon ou mauvais -->
       <div class="p-5">
-        <div class="p-3 text-center bg-success text-white" style="font-size: 40px;">5 x 8 = 40 Bien joué !</div>
         </div>
       </div>
   </div>
