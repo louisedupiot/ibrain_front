@@ -161,7 +161,7 @@ var clicBoutonAux = function (cx, cy) {
         for (j = 0; j < terrain.length; j++)
           if (terrain[i][j] == MINE) {
             document.getElementById(i + "" + j).style.backgroundColor =
-              "#F8A6C5";
+              "Firebrick";
             document.getElementById(i + "" + j).innerHTML =
               "<img src=../assets/images/bobomb.png  width='30px' height='30px'>";
           }
