@@ -172,7 +172,7 @@ var clicBoutonAux = function (cx, cy) {
       new swal({
         imageUrl: "../assets/images/DemineurBomb.gif",
         title: "Défaite!",
-        timer: 5000,
+        timer: 5000
       });
       continuerJeu = false;
     }
@@ -351,7 +351,11 @@ var testGagne = function () {
     }
   }
   Timer();
-
+  new swal({
+    imageUrl: "../assets/images/DemineurBomb.gif",
+    title: "Victoire!",
+    timer: 5000
+  });
   continuerJeu = false;
 };
 
