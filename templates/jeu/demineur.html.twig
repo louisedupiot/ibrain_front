@@ -11,6 +11,61 @@
 		</div>
 		<div class="div_jeu_demineur">
 
+<<<<<<< HEAD
+    <h2> DEMINEUR </h2>
+		<div>
+			<table>
+				<tr>
+					<td>Hauteur (11 max)</td>
+					<td>
+						<input 	type="number" 
+								value="8" 
+								placeholder="Largeur"
+								id="x"
+								min="8" max="11"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Largeur (11 max)</td>
+					<td>
+						<input 	type="number" 
+								value="8" 
+								placeholder="Hauteur"
+								id="y"
+								min="8" max="11"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Nombre de mines</td>
+					<td>
+						<input 	type="number" 
+								value="8" 
+								placeholder="Nombre de mines"
+								id="nb_mine"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td>
+						<input 	type="button" 
+								value="Lancer la partie" 
+								onClick="changerTerrain()"/>
+					</td>
+				</tr>
+			</table>
+		</diV>
+		
+		<div>
+			<h1>Règles du jeu</h1>
+			<ul>
+				<li>Ne clique pas sur les bombes qui sont symbolisées par <img src=../assets/images/bomb_logo.png  width='30px' height='30px'></li>
+				<li>Clic gauche pour tenter la case</li>
+				<li>Clic droit pour poser/enlever un drapeau</li>
+			</ul>
+=======
 			<div class="div_regles">
 				<h2 >Règles du jeu</h2>
 				<ul>
@@ -73,6 +128,7 @@
 
 			<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
 			<script src="{{ asset('/assets/js/demineur.js') }}"></script>
+>>>>>>> aaee8639b8e3fd244caea3926f7b048a7c23b463
 		</div>
 	</div>
 {% endblock %}
