@@ -11,20 +11,17 @@ let counter = 0;
 document.getElementById('levelSetup').innerHTML=`
 <div class="d-flex justify-content-between p-5">
     <div class="border border-dark p-2">
-        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Difficulty</p>
+        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Difficulté</p>
         <button class="btn btn-primary" value='+' onclick="setExpression(this)">+</button>
         <button class="btn btn-primary" value='-' onclick="setExpression(this)">-</button>
         <button class="btn btn-primary" value='x' onclick="setExpression(this)">x</button>
-        <button class="btn btn-primary" value='/' onclick="setExpression(this)">/</button>
     </div>
  
     <div class="border border-dark p-2">
-        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Level</p>
+        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Niveau</p>
         <button class="btn btn-primary" value="1" onclick="setLevel(this)">1</button>
         <button class="btn btn-primary" value="2" onclick="setLevel(this)">2</button>
         <button class="btn btn-primary" value="3" onclick="setLevel(this)">3</button>
-        <button class="btn btn-primary" value="4" onclick="setLevel(this)">4</button>
-        <button class="btn btn-primary" value="5" onclick="setLevel(this)">5</button>
     </div>
 </div>
 `;
@@ -67,7 +64,7 @@ function showScoreInformation(){
     document.getElementById('score').innerHTML=`
     <p class="m-0">Score : ${score}/10</p>
     <p class="m-0">Expression : ${expression} </p>
-    <p class="m-0">Level : ${level}</p>
+    <p class="m-0">Niveau : ${level}</p>
     `;
   }
 
@@ -108,7 +105,7 @@ function showScoreInformation(){
       </div>
       <input type="number" id="playerInput" class="form-control" style="font-size: 40px;">
       <div class="input-group-append">
-        <button class="btn btn-success" style="font-size: 40px;" onclick="setUserInput()">validate</button>
+        <button class="btn btn-success" style="font-size: 40px;" onclick="setUserInput()">Valider</button>
       </div>
     </div>
     `;
@@ -121,7 +118,7 @@ function showScoreInformation(){
       userInput = inputUserResult;
       checkUserResult();
     }else{
-      alert('Oeps no number found in input !')
+      alert('Pas de nombre !')
     }
   }
 
@@ -130,14 +127,14 @@ document.getElementById('Calcul').innerHTML='';
 if (userInput == result.toFixed(2)){
     document.getElementById('result').innerHTML=`
     <div class="p-5">
-    <div class="p-3 text-center bg-success text-white" style="font-size: 40px;">${number1} ${expression} ${number2} = ${userInput} good Job !</div>
+    <div class="p-3 text-center bg-success text-white" style="font-size: 40px;">${number1} ${expression} ${number2} = ${userInput} Bien joué !</div>
     </div>
     `;
     score++;
 }else {
     document.getElementById('result').innerHTML=`
     <div class="p-5">
-    <div class="p-3 text-center bg-danger text-white" style="font-size: 40px;">${number1} ${expression} ${number2} = ${userInput} is not correct it should be ${result} !</div>
+    <div class="p-3 text-center bg-danger text-white" style="font-size: 40px;">${number1} ${expression} ${number2} = ${userInput} est une mauvaise réponse, la bonne est ${result} !</div>
     </div>
     `;
 }
@@ -149,7 +146,7 @@ setTimeout(calculateTest,3000)
     document.getElementById('score').innerHTML='';
     document.getElementById('result').innerHTML=`
     <div class="p-5">
-    <div class="p-3 text-center bg-warning text-white" style="font-size: 40px;">Test done your Score is ${score}/10</div>
+    <div class="p-3 text-center bg-warning text-white" style="font-size: 40px;">Test términé : ton score est de ${score}/10</div>
     </div>
     `;
 }
