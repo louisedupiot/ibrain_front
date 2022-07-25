@@ -122,7 +122,7 @@ const flipCard = card => {
                     Tu as gagné !<br />
                     avec <span class="highlight">${state.totalFlips}</span> mouvements<br />
                     en <span class="highlight">${state.totalTime}</span> secondes
-                    <button> Rejouer </button>
+                    <button onClick="location.reload()"> Rejouer </button>
                 </span>
                 
             `
