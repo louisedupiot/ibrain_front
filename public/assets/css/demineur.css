@@ -1,0 +1,110 @@
+.body_demineur {
+  font-family: "Courier New", Courier, monospace;
+  padding: 20px;
+  background-image: linear-gradient(
+      rgba(251, 183, 135, 0.5),
+      rgb(255, 255, 255, 0.5)
+    ),
+    url("../images/pattern.png");
+}
+
+#demineur_titre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: calc(1em + 8vmin);
+  font-weight: 900;
+  color: #fa8836;
+  text-align: center;
+
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: white;
+  --stroke-color: #e3b947;
+
+  text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color),
+    calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke))
+      0px var(--stroke-color);
+}
+
+.div_jeu_demineur {
+  max-width: fit-content;
+  margin: 1em auto;
+  padding: 20px 80px 20px 80px;
+  border: groove grey;
+  border-width: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(242, 242, 242);
+}
+.swal2-styled.swal2-confirm {
+  background-color: #e3b947 !important;
+}
+
+#demineur_parametres_h2 {
+  text-align: center;
+  background-color: rgba(250, 136, 54, 1);
+  box-shadow: 60px 16px rgba(250, 136, 54, 0.5);
+  margin-bottom: 30px;
+}
+
+.div_parametres {
+  margin: 10px;
+  text-align: center;
+}
+
+.div_regles h2 {
+  text-align: center;
+  background-color: rgba(250, 136, 54, 1);
+  box-shadow: 60px 16px rgba(250, 136, 54, 0.5);
+  margin-bottom: 30px;
+}
+
+#x {
+  background: rgba(250, 136, 54, 0.2);
+  border: inset rgba(250, 136, 54, 1);
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 50px;
+}
+
+#y {
+  background: rgba(250, 136, 54, 0.2);
+  border: inset rgba(250, 136, 54, 1);
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 50px;
+}
+
+#nb_mine {
+  background: rgba(250, 136, 54, 0.2);
+  border: inset rgba(250, 136, 54, 1);
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 50px;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+#bouton_jouer {
+  border: none;
+  background: rgba(250, 136, 54, 1);
+  color: #fff;
+  width: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: all 300ms ease;
+}
+
+#bouton_jouer:hover {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(250, 136, 54, 0.5);
+  cursor: pointer;
+}
