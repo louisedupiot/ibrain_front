@@ -1,0 +1,20 @@
+{% include 'base.html.twig' %}
+
+
+{% block content %}
+
+
+	<h1>Notre boutique</h1>
+	<div class="row">
+		{% for product in products %}
+			<div class="col-md-5">
+				<div class="product-item text-center">
+					<img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" heigth="25px"class="img-fluid">
+					<h5>{{ product.name }}</h5>
+					<span class="product-subtitle">{{ product.subtitle }}</span>
+					<span class="product-price">{{ product.prix }}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	{% endblock %}

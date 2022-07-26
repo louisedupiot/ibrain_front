@@ -61,11 +61,16 @@ class Cart
 
     public function getFull(){
         
-        $CartComplete =[] ;
+         $CartComplete =[] ;
         if($this->get()){   
         foreach ($this->get() as $id => $quantity){
+            $product_object = $this->entityManager->getRepository(Abonnement::class)->findOneById($id);
+            if(!$product_object){
+                $this->delete($id);
+                continue;
+            }
             $CartComplete[] = [
-                'product' => $this->entityManager->getRepository(Abonnement::class)->findOneById($id),
+                'product' => $product_object,
                 'quantity'=> $quantity
             ];
         }
