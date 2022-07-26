@@ -56,7 +56,7 @@ function startTestQuestion(){
 
 function showScoreInformation(){
     document.getElementById('score').innerHTML=`
-    <p class="m-0">Question : ${counter}/10</p>
+    <p class="m-0">Question : ${counter+1}/10</p>
     <p class="m-0">Score : ${score}/10</p>
     <p class="m-0">Expression : ${expression} </p>
     <p class="m-0">Niveau : ${level}</p>
