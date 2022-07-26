@@ -1,3 +1,7 @@
+#div-header {
+  font-family: "Courier New", Courier, monospace;
+}
+
 .body-home {
   background-image: url("../images/fond_home_gris.jpg");
   background-size: cover;
@@ -25,6 +29,10 @@
   background-color: transparent;
 }
 
+#li-inscription {
+  border-left: solid white;
+  padding-left: 10px;
+}
 hr {
   margin: 0 auto;
   margin-top: 40px;
