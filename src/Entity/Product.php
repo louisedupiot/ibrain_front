@@ -51,7 +51,10 @@ class Product
 
         return $this;
     }
-
+    public function __toString()
+    {
+        return $this->name;
+    }
     public function getSlug(): ?string
     {
         return $this->slug;

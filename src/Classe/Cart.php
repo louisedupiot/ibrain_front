@@ -2,7 +2,7 @@
 
 namespace App\Classe;
 
-
+use App\Entity\Product;
 use Symfony\Component\HttpFoundation\RequestStack ;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -15,6 +15,8 @@ class Cart
     public function __construct(EntityManagerInterface $entityManager , RequestStack $session)
     {
         $this->session = $session;
+        $this->entityManager = $entityManager;
+
     }
     
 
@@ -60,11 +62,12 @@ class Cart
     }
 
     public function getFull(){
-        
+        //dd($this->entityManager->getRepository(Product::class)->findOneById(7));
+
          $CartComplete =[] ;
         if($this->get()){   
         foreach ($this->get() as $id => $quantity){
-            $product_object = $this->entityManager->getRepository(Abonnement::class)->findOneById($id);
+            $product_object = $this->entityManager->getRepository(Product::class)->findOneById($id);
             if(!$product_object){
                 $this->delete($id);
                 continue;
