@@ -1,13 +1,29 @@
 {% include 'base.html.twig' %}
 
-<title>{% block title %}memory{% endblock %}
-		</title>
-{% block content %}
+{% block body %}
+
+	<div class="body_memory">
+		<div class="div_titre">
+			<h1 id="memory_titre"> Jouer au Memory </h1>
+		</div>
+		<div class="div_jeu_memory">
+
+			<div class="div_regles">
+				<h2 >Règles du jeu</h2>
+				<ul>
+					<li>Retourne 2 cartes </li>
+					<li> Il faut que les 2 cartes soit similaires !</li>
+					<li> Tu gagnes si toutes les cartes sont retournées</li>
+					<li>Bonne chance ! </li>
+				</ul>
+			</div>
+            
+    
         <div class="game">
             <div class="controls">
                 <div class="stats">
                     <div class="moves">0 mouvement</div>
-                    <div class="timer">time: 0 sec</div>
+                    <div class="timer">temps: 0 sec</div>
                 </div>
             </div>
             <div class="board-container">
@@ -17,4 +33,5 @@
         </div>
 		
 		<script src="{{ asset('/assets/js/MemoryGame.js') }}"></script>
+
 {% endblock %}

@@ -1,20 +1,27 @@
 {% include 'base.html.twig' %}
+<link rel="stylesheet" href="../assets/css/all-games.css" />
 
-{% block title %}Hello JeuController!{% endblock %}
 
-{% block content %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block body %}
 
-    <h2> TOUS LES JEUX </h2>
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/ayoub/Desktop/IPSSI/projet-ibrain/src/Controller/JeuController.php'|file_link(0) }}">src/Controller/JeuController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/ayoub/Desktop/IPSSI/projet-ibrain/templates/jeu/index.html.twig'|file_link(0) }}">templates/jeu/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+<h1> TOUS LES JEUX </h1>
+    <h2> Voici tous nos jeux présents et à venir ! Faites votre choix ! </h2>
+    <div class=tous-les-jeux>
+        <div class= button>
+          <a class = "butn memory" href="/memory_game"/> Memory </a>
+          <a class = "butn demineur" href="/memory_game"/> Demineur </a>
+          <a class = "butn calcul" href="/memory_game"/> Calcul </a>
+          <a class = "butn dictee" href="#"/> Dictee </a>
+          <a class = "butn sudoku" href="/#"/> Sudoku </a>
+          <a class = "butn mot" href="#"/> Mots croisés </a>
+        </div>
+    <div class = "soon">
+      <p class = "test"> Coming Soon <p>
+      <p class = "test"> Coming Soon <p>
+      <p class = "test"> Coming Soon <p>
+    </div>
+
+
 {% endblock %}
