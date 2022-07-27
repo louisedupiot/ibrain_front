@@ -9,6 +9,10 @@
   font-weight: 500;
 }
 
+.container {
+  height: auto;
+}
+
 .nav-link {
   color: whitesmoke;
   font-size: large;
@@ -131,6 +135,27 @@ h2 .blocs-jeux {
   font-size: larger;
 }
 
+.presentation-abonnement {
+  text-align: center;
+  background-color: #272727;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.savoir-plus {
+  background-color: rgba(250, 136, 54, 0.5);
+  width: 30%;
+  margin: auto;
+  border-radius: 10px;
+}
+.titre-abonnement {
+  color: #ffba59;
+}
+
 #bouton-scroll-top {
   display: none;
   position: fixed;
@@ -146,3 +171,16 @@ h2 .blocs-jeux {
   border-radius: 4px;
   height: 40px;
 }
+
+/* .footer-custom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 1rem;
+  color: gray;
+  text-align: center;
+  background-color: white;
+}
+ */
