@@ -1,0 +1,88 @@
+
+
+#body_page_on {
+    display: none;
+}
+#body_page_off {
+    display: block;
+}
+
+.btn-stop{
+    width: 30%;
+}
+
+.body_reflexe {
+    font-family: "Courier New", Courier, monospace;
+    padding: 20px;
+}
+
+  #reflexe_titre {
+    font-family: "Courier New", Courier, monospace;
+    font-size: calc(1em + 8vmin);
+    font-weight: 900;
+    color: #fa8836;
+    text-align: center;
+  
+    --x-offset: -0.0625em;
+    --y-offset: 0.0625em;
+    --stroke: 0.025em;
+    --background-color: white;
+    --stroke-color: #e3b947;
+  
+    text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color),
+      calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke))
+        0px var(--stroke-color);
+  }
+  
+  .div_jeu_reflexe {
+    max-width: fit-content;
+    margin: 1em auto;
+    padding: 20px 80px 20px 80px;
+    border: groove grey;
+    border-width: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(242, 242, 242);
+  }
+  
+  #reflexe_parametres_h2 {
+    text-align: center;
+    background-color: rgba(250, 136, 54, 1);
+    box-shadow: 60px 16px rgba(250, 136, 54, 0.5);
+    margin-bottom: 30px;
+  }
+  
+  
+  .div_regles h2 {
+    text-align: center;
+    background-color: rgba(250, 136, 54, 1);
+    box-shadow: 60px 16px rgba(250, 136, 54, 0.5);
+    margin-bottom: 30px;
+  }
+
+.btn{
+    font-family: 'Courier New', Courier, monospace;
+    background: rgba(250, 136, 54, 1);
+    color: #FFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 0;
+    cursor: pointer;
+    font-size: 18pt;
+
+}
+
+.custom-select {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(250, 136, 54, 1);
+  color: #FFF;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-size: 16pt;
+}
+
+.select-selected:after {
+  border-color: #fff transparent transparent transparent;
+}
