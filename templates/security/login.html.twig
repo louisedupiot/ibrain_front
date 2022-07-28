@@ -16,24 +16,25 @@
 				<a href="{{ path('app_logout') }}">Se déconnecter</a>
 			</div>
 		{% endif %}
+		<div class="div-connexion">
+			<h1 class="titre-connexion"> CONNEXION </h1>
+			<label id="titre-email" for="inputEmail">Email</label>
+			<input type="email" value="{{ email }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+			<label id="titre-password" for="inputPassword">Mot de passe</label>
+			<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
-		<h1 class="titre-connexion"> Connexion</h1>
-		<label id="titre-email" for="inputEmail">Email</label>
-		<input type="email" value="{{ email }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-		<label id="titre-email" for="inputPassword">Mot de passe</label>
-		<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+			<input
+			type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-		<input
-		type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-		<button class="btn btn-lg btn-info btn-block mt-3" type="submit">
-			Se connecter
-		</button>
+			<button class="btn-orange" type="submit">
+				Se connecter
+			</button>
+		</div>
 	</form>
 
 	<p class="text-center">
 		Ou souhaitez-vous
-		<a href="{{path('register')}}">créer un compte </a>?</p>
+		<a href="{{path('register')}}"> <span id="creer-compte"> créer un compte </span></a>?</p>
 </div> 
 
 {% endblock %}
