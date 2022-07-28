@@ -1,22 +1,3 @@
-@font-face {
-    font-family: Fredoka;
-    src: url(./FredokaOne-Regular.ttf);
-}
-
-html {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(325deg,  #6a6269 0%,#824fbf 50%,#f6821b 100%);
-    font-family: Fredoka;
-}
-
-.game {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .controls {
     display: flex;
     gap: 20px;
@@ -39,7 +20,7 @@ button {
 }
 
 .stats {
-    color: #FFF;
+    color: black;
     font-size: 14pt;
 }
 
@@ -51,7 +32,7 @@ button {
 .win {
     border-radius: 5px;
     box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
-    background: linear-gradient(135deg,  #6a6269 0%,#824fbf 50%,#f6821b 100%);
+    background: gray;
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
@@ -69,6 +50,7 @@ button {
 
 .board-container.flipped .win {
     transform: rotateY(0) rotateZ(0);
+    background-color: #d4d3d2;
 }
 
 .card {
@@ -84,7 +66,9 @@ button {
     border-radius: 5px;
     width: 100%;
     height: 100%;
-    background: #282A3A;
+    background-size: 100%;
+    background-image:
+    url("../images/logo_ibrain-2.PNG");
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
@@ -96,6 +80,7 @@ button {
     text-align: center;
     line-height: 100px;
     background: #d4d3d2;
+
 }
 
 .card.flipped .card-front {
@@ -129,3 +114,43 @@ button {
 .highlight {
     color: #6f00fc;
 }
+
+.body_memory {
+    font-family: "Courier New", Courier, monospace;
+    padding: 20px;
+    background-image: 
+    url("../images/fond_memory.png");
+  }
+
+#memory_titre {
+font-family: "Courier New", Courier, monospace;
+font-size: calc(1em + 8vmin);
+font-weight: 900;
+color: #fa8836;
+text-align: center;
+
+--x-offset: -0.0625em;
+--y-offset: 0.0625em;
+--stroke: 0.025em;
+--background-color: white;
+--stroke-color: #e3b947;
+
+text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color),
+    calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke))
+    0px var(--stroke-color);
+}
+
+.div_jeu_memory {
+max-width: fit-content;
+margin: 1em auto;
+padding: 20px 80px 20px 80px;
+border: groove grey;
+border-width: 10px;
+display: flex;
+align-items: center;
+flex-direction: column;
+background-color: #d4d3d2;
+}
+
+
+
