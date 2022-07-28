@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
+use App\Entity\Order;
 use App\Entity\Product;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -16,12 +17,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractDashboardController
 {
 
-    public function __construct( private AdminUrlGenerator $adminUrlGenerator){
-
+    public function __construct(private AdminUrlGenerator $adminUrlGenerator)
+    {
     }
-    
-        
-    
+
+
+
 
     #[Route('/admin', name: 'admin')]
     public function index(): Response
@@ -35,7 +36,7 @@ class DashboardController extends AbstractDashboardController
         $url = $routeBuilder->setController(CategoryCrudController::class)->generateUrl();
         return $this->redirect($url);
 
-        
+
 
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
@@ -63,29 +64,35 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home'); 
-    
-        yield MenuItem::section('Users' ,'fa fa-user');
-       
-         yield   MenuItem::linkToCrud('Create Users', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW);
-        yield  MenuItem::linkToCrud('Show Users', 'fas fa-eye', User::class);
-        
+        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 
-        yield MenuItem::section('Categories' ,"fa-solid fa-list-check");
+        yield MenuItem::section('Users', 'fa fa-user');
+
+        yield   MenuItem::linkToCrud('Create Users', 'fas fa-plus', User::class)->setAction(Crud::PAGE_NEW);
+        yield  MenuItem::linkToCrud('Show Users', 'fas fa-eye', User::class);
+
+
+        yield MenuItem::section('Categories', "fa-solid fa-list-check");
 
         yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
             MenuItem::linkToCrud('Create Category', 'fas fa-plus', Category::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Categories', 'fas fa-eye', Category::class)
         ]);
 
-        yield MenuItem::section('Products' ,"fa-solid tag");
+        yield MenuItem::section('Products', "fa-solid tag");
         yield MenuItem::subMenu('Actions', 'fas fa-tag')->setSubItems([
             MenuItem::linkToCrud('Create Product', 'fas fa-plus', Product::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Product', 'fas fa-eye', Product::class)
         ]);
-        
-       
-        
+
+        yield MenuItem::section('Commande', "fa-solid tag");
+        yield MenuItem::subMenu('Actions', 'fas fa-tag')->setSubItems([
+            MenuItem::linkToCrud('Create Commande', 'fas fa-plus', Order::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show Commande', 'fas fa-eye', Order::class)
+        ]);
+
+
+
 
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
