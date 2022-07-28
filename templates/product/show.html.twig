@@ -1,41 +1,27 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	{{ product.name }}
+	{{ product.slug }}
 {% endblock %}
 
 
 {% block content %}
+	<link href="/assets/css/product.css" rel="stylesheet">
 
-	{# 
-	<style>
-			.example-wrapper {
-				margin: 1em auto;
-				max-width: 800px;
-				width: 95%;
-				font: 18px / 1.5 sans-serif;
-			}
-			.example-wrapper code {
-				background: #F5F5F5;
-				padding: 2px 6px;
-			}
-		</style> #}
-
-	<h1>{{product.name}}</h1>
-	<div class="row">
-		<div class="col-md-4">
-			<img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" heigth="25px" class="img-fluid">
+	<div class="div-presentation-produit">
+		<div class="img-produit">
+			<img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" heigth="300px" width="300px">
 		</div>
-		<div class="col-md-7">
+		<div class="details-produit">
 			<h1>{{product.name}}</h1>
 			<p>{{ product.subtitle }}</p>
-			<span class="product-single-price">
-				{{ (product.prix / 100)| number_format(2, ',', '.') }}
+			<span class=" product-single-price">
+				{{ (product.prix / 100)| number_format(2, ',', '.') }}€
 			</span>
 			<hr>
 			<p>
 				{{ product.description }}
 			</p>
-			<a href="{{path('cart_to_add', {'id' : product.id } )}}" class="btn btn-primary">
+			<a href="{{path('cart_to_add', {'id' : product.id } )}}" class="bouton-add">
 				Ajouter au panier
 			</a>
 		</div>
