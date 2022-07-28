@@ -10,6 +10,10 @@
   padding-bottom: 20px;
 }
 
+.body-connexion {
+  font-family: "Courier New", Courier, monospace;
+}
+
 .container {
   height: auto;
 }
@@ -170,4 +174,14 @@ h2 .blocs-jeux {
   padding: 10px;
   border-radius: 4px;
   height: 40px;
+}
+
+#inputEmail {
+  width: 50%;
+  margin: auto;
+}
+
+#inputPassword {
+  width: 50%;
+  margin: auto;
 }
