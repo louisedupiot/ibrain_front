@@ -6,7 +6,7 @@
 
 button {
     font-family: 'Courier New', Courier, monospace;
-    background: #282A3A;
+    background: rgba(250, 136, 54, 1);
     color: #FFF;
     border-radius: 5px;
     padding: 10px 20px;
