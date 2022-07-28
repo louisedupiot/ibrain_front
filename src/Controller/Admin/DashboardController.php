@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Abonnement;
 use App\Entity\Category;
 use App\Entity\Order;
 use App\Entity\Product;
@@ -89,6 +90,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::subMenu('Actions', 'fas fa-tag')->setSubItems([
             MenuItem::linkToCrud('Create Commande', 'fas fa-plus', Order::class)->setAction(Crud::PAGE_NEW),
             MenuItem::linkToCrud('Show Commande', 'fas fa-eye', Order::class)
+        ]);
+
+        yield MenuItem::section('Abonnement', "fa-solid tag");
+        yield MenuItem::subMenu('Actions', 'fas fa-tag')->setSubItems([
+            MenuItem::linkToCrud('Create Abonnement', 'fas fa-plus', Abonnement::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Show Abonnement', 'fas fa-eye', Abonnement::class)
         ]);
 
 

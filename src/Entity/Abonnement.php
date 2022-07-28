@@ -16,17 +16,19 @@ class Abonnement
     #[ORM\Column(type: 'string', length: 255)]
     private $Nom;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $illustration;
+
+
     #[ORM\Column(type: 'float')]
     private $Prix;
+    
+    #[ORM\Column(type: 'string', length: 255)]
+    private $slug;
 
-    #[ORM\Column(type: 'date')]
-    private $dateStart;
 
-    #[ORM\Column(type: 'uuid')]
-    private $iduser;
-
-    #[ORM\Column(type: 'date')]
-    private $dateEnd;
+    #[ORM\Column(type: 'text')]
+    private $description;
 
     public function getId(): ?int
     {
@@ -45,6 +47,32 @@ class Abonnement
         return $this;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    
+
+    public function getIllustration(): ?string
+    {
+        return $this->illustration;
+    }
+
+    public function setIllustration(string $illustration): self
+    {
+        $this->illustration = $illustration;
+
+        return $this;
+    }
+
     public function getPrix(): ?float
     {
         return $this->Prix;
@@ -57,39 +85,17 @@ class Abonnement
         return $this;
     }
 
-    public function getDateStart(): ?\DateTimeInterface
+
+    public function getSlug(): ?string
     {
-        return $this->dateStart;
+        return $this->slug;
     }
 
-    public function setDateStart(\DateTimeInterface $dateStart): self
+    public function setSlug(string $slug): self
     {
-        $this->dateStart = $dateStart;
+        $this->slug = $slug;
 
         return $this;
     }
 
-    public function getIduser()
-    {
-        return $this->iduser;
-    }
-
-    public function setIduser($iduser): self
-    {
-        $this->iduser = $iduser;
-
-        return $this;
-    }
-
-    public function getDateEnd(): ?\DateTimeInterface
-    {
-        return $this->dateEnd;
-    }
-
-    public function setDateEnd(\DateTimeInterface $dateEnd): self
-    {
-        $this->dateEnd = $dateEnd;
-
-        return $this;
-    }
 }
