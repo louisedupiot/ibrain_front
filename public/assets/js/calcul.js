@@ -8,24 +8,6 @@ let randomRange = 0;
 let score = 0;
 let counter = 0;
 
-document.getElementById('levelSetup').innerHTML=`
-<div class="d-flex justify-content-between p-5">
-    <div class="border border-dark p-2">
-        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Symbole</p>
-        <button class="btn btn-primary" value='+' onclick="setExpression(this)">+</button>
-        <button class="btn btn-primary" value='-' onclick="setExpression(this)">-</button>
-        <button class="btn btn-primary" value='x' onclick="setExpression(this)">x</button>
-    </div>
- 
-    <div class="border border-dark p-2">
-        <p class="text-center bg-dark text-white p-3 mb-2 font-weight-bold">Niveau</p>
-        <button class="btn btn-primary" value="1" onclick="setLevel(this)">1</button>
-        <button class="btn btn-primary" value="2" onclick="setLevel(this)">2</button>
-        <button class="btn btn-primary" value="3" onclick="setLevel(this)">3</button>
-    </div>
-</div>
-`;
-
 function setExpression(ex){
     expression = ex.value;
     startTestQuestion();
