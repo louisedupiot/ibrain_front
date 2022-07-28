@@ -7,6 +7,7 @@
   background-size: cover;
   font-family: "Courier New", Courier, monospace;
   font-weight: 500;
+  padding-bottom: 20px;
 }
 
 .container {
@@ -143,7 +144,6 @@ h2 .blocs-jeux {
   padding: 20px;
   width: 90%;
   margin: auto;
-  margin-bottom: 30px;
 }
 
 .savoir-plus {
@@ -171,4 +171,3 @@ h2 .blocs-jeux {
   border-radius: 4px;
   height: 40px;
 }
-

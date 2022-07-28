@@ -1,0 +1,43 @@
+{% include 'base.html.twig' %}
+<title>{% block title %} Réflexe {% endblock %}
+		</title>
+{% block content %}
+
+
+        <center>
+        <h2>Test your Response time!</h2>
+        </center>
+        <center><h3>How To Play</h3>
+        <p>Click on "Start" first, and wait until the
+ background color changes. As soon as it changes, hit "stop!"
+        </p>
+  
+        <br>
+        <form name="response">
+        Change background color to: 
+        <select name="bgColorChange">
+        <option selected>deeppink
+        <option>aliceblue
+        <option>crimson
+        <option>darkkhaki
+        <option>cadetblue
+        <option>darkorchid
+        <option>coral
+        <option>teal
+        <option>mediumslateblue
+        <option>tomato
+        <option>darkslategray
+        <option>limegreen
+        <option>cornflowerblue
+        <option>darkolivegreen
+        </select><br>
+        <br>
+  
+        <input type="button" class="btn" value="Start" onClick="startit()">
+        
+        
+        </form>
+
+    <script src="{{ asset('/assets/js/reflexe.js') }}"></script>
+
+{% endblock %}

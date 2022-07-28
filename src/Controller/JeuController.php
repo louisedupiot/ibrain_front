@@ -54,4 +54,11 @@ class JeuController extends AbstractController
             'controller_name' => 'JeuController',
         ]);
     } 
+    #[Route('/reflexe_game', name: 'jeu_reflexe')]
+    public function reflexe_game(): Response
+    {
+        return $this->render('jeu/reflexe.html.twig',[
+            'controller_name' => 'JeuController',
+        ]);
+    } 
 }
