@@ -257,3 +257,8 @@ h2 .blocs-jeux {
 #registration_form_plainPassword {
   margin-left: 9px;
 }
+
+.nav-link #cmt img {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
