@@ -1,42 +1,61 @@
 {% include 'base.html.twig' %}
+<link rel="stylesheet" href="../assets/css/reflexe.css" />
+
 <title>{% block title %} Réflexe {% endblock %}
+
 		</title>
 {% block content %}
 
+        <div class="body_reflexe">
+            <div class="div_titre">
+                <h1 id="reflexe_titre"> Jeu de Reflexe </h1>
+            </div>
 
-        <center>
-        <h2>Test your Response time!</h2>
-        </center>
-        <center><h3>How To Play</h3>
-        <p>Click on "Start" first, and wait until the
- background color changes. As soon as it changes, hit "stop!"
-        </p>
-  
-        <br>
-        <form name="response">
-        Change background color to: 
-        <select name="bgColorChange">
-        <option selected>deeppink
-        <option>aliceblue
-        <option>crimson
-        <option>darkkhaki
-        <option>cadetblue
-        <option>darkorchid
-        <option>coral
-        <option>teal
-        <option>mediumslateblue
-        <option>tomato
-        <option>darkslategray
-        <option>limegreen
-        <option>cornflowerblue
-        <option>darkolivegreen
-        </select><br>
-        <br>
-  
-        <input type="button" class="btn" value="Start" onClick="startit()">
-        
-        
-        </form>
+            <div class="div_jeu_reflexe">
+                <div class="div_regles">
+                    <h2 >Règles du jeu</h2>
+                    <ul>
+                        <li>Choisis une couleur </li>
+                        <li>Clique sur Commencer </li>
+                        <li> Attend que l'écran devienne de la couleur que tu as choisis</li>
+                        <li> Appuie sur STOP le plus vite possible</li>
+                        <li>Ton temps de réaction sera affiché </li>
+                    </ul>
+                </div>
+            <form name="response">
+                Change la couleur du fond de la page: 
+                <select class="custom-select" name="bgColorChange">
+                    <option selected>deeppink
+                    <option>aliceblue
+                    <option>crimson
+                    <option>darkkhaki
+                    <option>cadetblue
+                    <option>darkorchid
+                    <option>coral
+                    <option>teal
+                    <option>mediumslateblue
+                    <option>tomato
+                    <option>darkslategray
+                    <option>limegreen
+                    <option>cornflowerblue
+                    <option>darkolivegreen
+                </select>
+                <br/><br/>
+                <div id="body_page_on">
+
+                    <input type="button" class="btn btn-stop" value="STOP" onClick="stopTest()">
+                </div>
+                <div id="body_page_off">
+
+                    <input type="button" class="btn" value="Commencer" onClick="startit()">
+                </div>
+
+            </form>
+            </div>
+        </div>
+
+
+
 
     <script src="{{ asset('/assets/js/reflexe.js') }}"></script>
 
