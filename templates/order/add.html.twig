@@ -1,5 +1,8 @@
 {% include 'base.html.twig' %}
 
+{% block javascript %}
+    <script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
 <title>{% block title %}Panier{% endblock %}</title>
 {% block content %}
     <h2> Je passe ma commande</h2>
@@ -28,13 +31,34 @@
 			<b>Nombre de produit:
 				{{cart|length}}</b><br/>
 			<b>
-				Total :
+				Sous Total :
 				{{ (total / 100) | number_format(2, ',', '.') }} €
 			</b>
 		</div>
-        {{ form(form ,{action:path('order_recap')}) }}
        
-       
-
+       <a id="checkout-button" class="btn btn-success btn-block">Payer | {{ (total / 100) | number_format(2, ',', '.') }} €</a>
+  {# {{path('')}}" #}
         
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+    var stripe = Stripe("pk_test_51LPRdnCK4WaiiCIrog5NXSX5TVnkNiqMWQDMDjZYDrPiFLUDKeFc8sBdQtQzfxDKSixoIDjrJpRKMZg9vJvCKiAN00JRSzXR8v");
+    var checkoutButton = document.getElementById('checkout-button');
+
+    checkoutButton.addEventListener("click",function(){
+        fetch("/commande/create-session" ,{ method: "POST"
+    }).then(function ( response){
+        return response.json();
+    }).then( function (session){
+        return stripe.redirectToCheckout({sessionId : session.id });
+    }).then(function (result){
+        if (result.error){
+            alert(result.error.message);
+        }
+    }).catch(function(error){
+        console.log("Error : ", error);
+    });
+    });
+    </script> 
 {% endblock %}

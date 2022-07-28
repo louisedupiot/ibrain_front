@@ -6,6 +6,7 @@ use App\Repository\OrderRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Boolean;
 
 #[ORM\Entity(repositoryClass: OrderRepository::class)]
 #[ORM\Table(name: '`order`')]
@@ -25,6 +26,9 @@ class Order
 
     #[ORM\OneToMany(mappedBy: 'myOrder', targetEntity: OrderDetails::class)]
     private $orderDetails;
+
+    #[ORM\Column(type: 'boolean')]
+    private $IsPaid;
 
     public function __construct()
     {
@@ -48,6 +52,7 @@ class Order
         return $this;
     }
 
+
     public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
@@ -59,7 +64,25 @@ class Order
 
         return $this;
     }
+    public function getIsPaid(): ?Bool
+    {
+        return $this->IsPaid;
+    }
+    public function setIsPaid($IsPaid): ?Bool
+    {
+        $this->IsPaid = $IsPaid;
 
+        return $IsPaid;
+    }
+    public function getTotal()
+    {
+        $total = null;
+
+        foreach ($this->getOrderDetails()->getValues() as $product) {
+            $total = $total + ($product->getPrice() + $product->getQuantity());
+        }
+        return $total;
+    }
     /**
      * @return Collection<int, OrderDetails>
      */
