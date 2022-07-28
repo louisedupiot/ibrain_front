@@ -56,6 +56,9 @@ function stopTest() {
       clearTimeout(timerID);
       startPressed = false;
       alert("Tricheur! Tu as appuyé trop tôt !");
+      body_off.style.display = "block";
+      body_on.style.display = "none";
+
     }
   }
 }
