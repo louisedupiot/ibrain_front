@@ -28,14 +28,9 @@
   font-size: larger;
 }
 
-.bouton-rechercher {
-  border-color: white;
-  border-width: 2px;
+#myInput {
   border-radius: 10px;
-  border-style: outset;
-  padding: 10px 20px 10px 20px;
-  color: white;
-  background-color: transparent;
+  height: 40px;
 }
 
 #li-inscription {
@@ -50,7 +45,7 @@ hr {
   background-color: black;
 }
 
-#titre-home {
+.grand-titre {
   margin: 15px;
   font-family: "Courier New", Courier, monospace;
   font-size: calc(0.5em + 8vmin);
@@ -246,4 +241,19 @@ h2 .blocs-jeux {
 }
 #creer-compte:hover {
   color: #ffba59;
+}
+
+.div-inscription {
+  text-align: center;
+}
+
+#registration_form_email {
+  margin-left: 35px;
+}
+#registration_form_username {
+  margin-left: 2px;
+}
+
+#registration_form_plainPassword {
+  margin-left: 8px;
 }
