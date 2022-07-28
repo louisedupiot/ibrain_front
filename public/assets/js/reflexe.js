@@ -16,6 +16,7 @@ function startTest() {
 function remark(responseTime) {
   var responseString = "";
   if (responseTime < 0.2) responseString = "Bien joué !";
+  if (responseTime >= 0.2 && responseTime < 0.3) responseString = "Bien !";
   if (responseTime >= 0.3 && responseTime < 0.2) responseString = "Cool!";
   if (responseTime >= 0.4 && responseTime < 0.3)
     responseString = "Peut mieux faire...";
@@ -60,6 +61,7 @@ var today = new Date();
 var randSeed = today.getSeconds();
 function randNumber() {
   randSeed = (randMULTIPLIER * randSeed + randINCREMENT) % (1 << 31);
+
   return ((randSeed >> 15) & 0x7fff) / 32767;
 }
 
@@ -73,7 +75,7 @@ function startit() {
     startPressed = true;
     // body_off.style.display = "none";
     // body_on.style.display = "block";
-    timerID = setTimeout("startTest()", 6000 * randNumber());
+    timerID = setTimeout("startTest()", 10000 * randNumber());
 
 
   }
