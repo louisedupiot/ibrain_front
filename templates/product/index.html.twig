@@ -1,29 +1,35 @@
 {% include 'base.html.twig' %}
 
 <title>
-	{% block title %}Produits{% endblock %}
+	{% block title %}Produits
+	{% endblock %}
 </title>
-{% block content %}
+
+<link href="/assets/css/all-products.css" rel="stylesheet">
+{% block body %}
 
 
-	<h1>Notre boutique</h1>
-	<div class="row">
-		<div class="col-md-3">
-			<h3>Filtrer</h3>
-			{{form(form)}}
-			</div>
-			<div class="col-md-9">
-				<h3>Nos produits</h3>
-		{% for product in products %}
-			<div class="col-md-4">
-				<div class="product-item text-center">
-					<a href="{{path("product" , {'slug' : product.slug }) }}">
-						<img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" heigth="25px" class="img-fluid"></a>
-					<h5>{{ product.name }}</h5>
-					<span class="product-subtitle">{{ product.subtitle }}</span>
-					<span class="product-price">{{ (product.prix / 100)| number_format(2, ',', '.') }}</span>
+	<h1 class="grand-titre">Notre boutique</h1>
+
+	<div class="div-filtre">
+		<h3>Filtrer</h3>
+		{{form(form)}}
+		</div>
+		<h3>Nos produits</h3>
+		<div class="div-produits">
+
+			{% for product in products %}
+				<div class="col-md-4">
+					<div class="bloc-produit">
+						<a href="{{path("product" , {'slug' : product.slug }) }}">
+							<img class="produits" src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" height="200px" width="200px"></a>
+						<h5>{{ product.name }}</h5>
+						<hr>
+						<span class="product-subtitle">{{ product.subtitle }}</span>
+						<span class="product-price">{{ (product.prix / 100)| number_format(2, ',', '.') }}
+							€</span>
+					</div>
 				</div>
-			</div>
-		{% endfor %}
-	</div>
-{% endblock %}
+			{% endfor %}
+		</div>
+	{% endblock %}

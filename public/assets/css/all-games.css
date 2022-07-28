@@ -1,5 +1,6 @@
 body {
   background-image: url("../images/fond_home_gris.jpg");
+  background-size: cover;
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -8,7 +9,6 @@ h1 {
   font-size: calc(0.5em + 8vmin);
   font-weight: 700;
   color: #fa8836;
-  background-image: url("../images/fond_home_gris.jpg");
   text-align: center;
   --x-offset: -0.0625em;
   --y-offset: 0.0625em;
