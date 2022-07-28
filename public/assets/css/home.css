@@ -7,6 +7,11 @@
   background-size: cover;
   font-family: "Courier New", Courier, monospace;
   font-weight: 500;
+  padding-bottom: 20px;
+}
+
+.body-connexion {
+  font-family: "Courier New", Courier, monospace;
 }
 
 .container {
@@ -23,14 +28,9 @@
   font-size: larger;
 }
 
-.bouton-rechercher {
-  border-color: white;
-  border-width: 2px;
+#myInput {
   border-radius: 10px;
-  border-style: outset;
-  padding: 10px 20px 10px 20px;
-  color: white;
-  background-color: transparent;
+  height: 40px;
 }
 
 #li-inscription {
@@ -45,7 +45,7 @@ hr {
   background-color: black;
 }
 
-#titre-home {
+.grand-titre {
   margin: 15px;
   font-family: "Courier New", Courier, monospace;
   font-size: calc(0.5em + 8vmin);
@@ -143,7 +143,6 @@ h2 .blocs-jeux {
   padding: 20px;
   width: 90%;
   margin: auto;
-  margin-bottom: 30px;
 }
 
 .savoir-plus {
@@ -172,3 +171,89 @@ h2 .blocs-jeux {
   height: 40px;
 }
 
+#inputEmail {
+  width: 50%;
+  margin: auto;
+}
+
+#inputPassword {
+  width: 50%;
+  margin: auto;
+}
+
+#titre-email {
+  margin: 10px 0 10px 0;
+}
+
+#titre-password {
+  margin: 10px 0 10px 0;
+}
+
+.div-connexion {
+  text-align: center;
+}
+
+.titre-connexion {
+  margin: 15px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: calc(0.5em + 8vmin);
+  font-weight: 700;
+  color: #fa8836;
+  text-align: center;
+
+  --x-offset: -0.0625em;
+  --y-offset: 0.0625em;
+  --stroke: 0.025em;
+  --background-color: white;
+  --stroke-color: #e3b947;
+
+  text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color),
+    calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke))
+      0px var(--stroke-color);
+}
+
+.btn-orange {
+  width: 20%;
+  height: 40px;
+  margin-top: 20px;
+  background-color: #fa8836;
+  color: white;
+  border: none;
+  background: rgba(250, 136, 54, 1);
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: all 300ms ease;
+}
+
+.btn-orange:hover {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(250, 136, 54, 0.5);
+  cursor: pointer;
+}
+
+#creer-compte {
+  color: #fa8836;
+}
+#creer-compte:hover {
+  color: #ffba59;
+}
+
+.div-inscription {
+  text-align: center;
+}
+
+#registration_form_email {
+  margin-left: 35px;
+}
+#registration_form_username {
+  margin-left: 2px;
+}
+
+#registration_form_plainPassword {
+  margin-left: 9px;
+}

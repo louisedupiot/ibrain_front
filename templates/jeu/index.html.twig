@@ -1,27 +1,20 @@
 {% include 'base.html.twig' %}
 <link rel="stylesheet" href="../assets/css/all-games.css" />
-
-
-
 {% block body %}
 
 
 <h1> TOUS LES JEUX </h1>
-    <h2> Voici tous nos jeux présents et à venir ! Faites votre choix ! </h2>
+    <h3 id="presentation-jeux"> Voici tous nos jeux présents et <span id="a-venir">à venir </span>! Faites votre choix ! </h3>
     <div class=tous-les-jeux>
         <div class= button>
-          <a class = "butn memory" href="/memory_game"/> Memory </a>
-          <a class = "butn demineur" href="/memory_game"/> Demineur </a>
-          <a class = "butn calcul" href="/memory_game"/> Calcul </a>
-          <a class = "butn dictee" href="#"/> Dictee </a>
-          <a class = "butn sudoku" href="/#"/> Sudoku </a>
-          <a class = "butn mot" href="#"/> Mots croisés </a>
+          <a class = "butn memory" href="/memory_game"/><h2 class="titre-jeux"> MEMORY </h2></a>
+          <a class = "butn demineur" href="/demineur_game"/><h2 class="titre-jeux"> DEMINEUR </h2></a>
+          <a class = "butn calcul" href="/caclul_game"/><h2 class="titre-jeux"> CALCUL </h2></a>
+          <a class = "butn reflexe" href="/reflexe_game"/><h2 class="titre-jeux"> REFLEXE </h2></a>
+          <a class = "butn dictee" href="#"/><h2 class="titre-jeux"> DICTEE </h2><span id="en-cours">(en cours)</span></a>
+          <a class = "butn sudoku" href="/#"/><h2 class="titre-jeux"> SUDOKU </h2><span id="en-cours">(en cours)</span></a>
+          <a class = "butn mot" href="#"/><h2 class="titre-jeux"> SOLITAIRE </h2><span id="en-cours">(en cours)</span></a>
         </div>
-    <div class = "soon">
-      <p class = "test"> Coming Soon <p>
-      <p class = "test"> Coming Soon <p>
-      <p class = "test"> Coming Soon <p>
-    </div>
 
 
 {% endblock %}
