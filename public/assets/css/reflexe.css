@@ -1,11 +1,16 @@
 
 
-.body_page_on {
+#body_page_on {
+    display: none;
+}
+#body_page_off {
     display: block;
 }
-.body_page_off {
-    display: block;
+
+.btn-stop{
+    width: 30%;
 }
+
 .body_reflexe {
     font-family: "Courier New", Courier, monospace;
     padding: 20px;
@@ -66,4 +71,18 @@
     cursor: pointer;
     font-size: 18pt;
 
+}
+
+.custom-select {
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(250, 136, 54, 1);
+  color: #FFF;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-size: 16pt;
+}
+
+.select-selected:after {
+  border-color: #fff transparent transparent transparent;
 }
