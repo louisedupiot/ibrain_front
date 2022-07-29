@@ -20,7 +20,10 @@
 			<p>
 				{{ abonnement.description }}
 			</p>
-			<a id="checkout-button" class="btn btn-success btn-block">Payer | {{ (total / 100) | number_format(2, ',', '.') }} €</a>
+			{# <a id="checkout-button" class="btn btn-success btn-block">Payer | {{ (total / 100) | number_format(2, ',', '.') }} €</a>
+			</a> #}
+            <a href="{{path('cart_to_add', {'id' : abonnement.id } )}}" class="bouton-add">
+				Ajouter au panier
 			</a>
 		</div>
 	</div>
