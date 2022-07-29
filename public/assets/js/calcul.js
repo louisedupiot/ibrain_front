@@ -8,6 +8,8 @@ let randomRange = 0;
 let score = 0;
 let counter = 0;
 
+
+
 function setExpression(ex){
     expression = ex.value;
     startTestQuestion();
@@ -38,11 +40,11 @@ function startTestQuestion(){
 
 function showScoreInformation(){
     document.getElementById('score').innerHTML=`
-    <p class="m-0">Question : ${counter+1}/10</p>
-    <p class="m-0">Score : ${score}/10</p>
-    <p class="m-0">Expression : ${expression} </p>
-    <p class="m-0">Niveau : ${level}</p>
-    
+    <p class="que"> Question : ${counter+1}/10</p>
+    <p class="sco"> Score : ${score}/10</p>
+    <p class="exp">Expression : ${expression} </p>
+    <p class="niv">Niveau : ${level}</p>
+
     `;
   }
 
@@ -70,7 +72,6 @@ function showScoreInformation(){
   function testQuestion(){
  
     //hide level and expression option
-    document.getElementById('levelSetup').innerHTML='';
    
     //show math question
     document.getElementById('Calcul').innerHTML= `
@@ -80,7 +81,7 @@ function showScoreInformation(){
       </div>
       <input type="number" id="playerInput" class="form-control" style="font-size: 40px;">
       <div class="input-group-append">
-        <button class="btn btn-success" style="font-size: 30px;" onclick="setUserInput()">Valider</button>
+        <button class="valid" style="font-size: 30px;" onclick="setUserInput()">Valider</button>
         <button style="font-size: 30px;" onclick="location.reload()">Retour</button>
 
       </div>
