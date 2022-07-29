@@ -1,4 +1,8 @@
+.container {
+  font-family: "Courier New", Courier, monospace;
+}
 .footer-dark {
+  font-family: "Courier New", Courier, monospace;
   margin-top: 20px;
   padding: 50px 0;
   color: #f0f9ff;

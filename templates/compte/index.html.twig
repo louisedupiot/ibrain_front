@@ -1,45 +1,46 @@
-{% extends 'base.html.twig' %}
+{% include 'base.html.twig' %}
 
-{% block title %}Mon compte
-{% endblock %}
+<title>
+	{% block title %}Mon compte
+	{% endblock %}
+</title>
 
 {% block content %}
+	<div class="div-compte">
+		<h1>Mon compte</h1>
+		{% if is_granted('ROLE_ADMIN') %}
+			<p>Vous êtes un administrateur, accéder au
+				<a href="/admin">
+					backoffice
+				</a>
+				?
+			</p><br/>
+			<hr>
+		{% endif %}
+		Bienvenue
+		{{ app.user.username }}
+		dans votre compte.<br/>
+		C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.
 
-	<h1>Mon compte</h1>
-	{% if is_granted('ROLE_ADMIN') %}
-		<p>Vous êtes un administrateur, accéder au
-			<a href="/admin">
-				backoffice
-			</a>
-			?
-		</p><br/>
-		<hr>
-	{% endif %}
-	Bienvenue
-	{{ app.user.username }}
-	dans votre compte.<br/>
-	C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.
-
-	<div class="row">
-		<div class="col-md-4">
-			<div class="account-item text-center">
-				<img src="{{ asset('assets/images/password.png') }}" alt=""><br/>
-				<a href="#">Modifier mon mot de passe</a>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="account-item text-center">
+					<img src="{{ asset('assets/images/password.png') }}" alt=""><br/>
+					<a href="#">Modifier mon mot de passe</a>
+				</div>
 			</div>
-		</div>
-		{# <div class="col-md-4">
-											<div class="account-item text-center">
-												<img src="{{ asset('assets/img/address-book.png') }}" alt=""><br/>
-												<a href="#">Gérer mes adresses</a>
-											</div>
-										</div> #}
-		<div class="col-md-4">
-			<div class="account-item text-center">
-				<img src="{{ asset('assets/images/purchase.png') }}" alt=""><br/>
-				<a href="#">Mes commandes</a>
+			{# <div class="col-md-4">
+																								<div class="account-item text-center">
+																									<img src="{{ asset('assets/img/address-book.png') }}" alt=""><br/>
+																									<a href="#">Gérer mes adresses</a>
+																								</div>
+																							</div> #}
+			<div class="col-md-4">
+				<div class="account-item text-center">
+					<img src="{{ asset('assets/images/purchase.png') }}" alt=""><br/>
+					<a href="#">Mes commandes</a>
+				</div>
 			</div>
 		</div>
 	</div>
-
 {% endblock %}
-{% include 'footer.html.twig' %}

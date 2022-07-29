@@ -1,7 +1,7 @@
 body {
   background-image: url("../images/fond_home_gris.jpg");
   background-size: cover;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Courier New", Courier, monospace !important;
 }
 
 h1 {
