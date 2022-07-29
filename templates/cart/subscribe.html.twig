@@ -17,7 +17,7 @@
 	</style>
 
 	<div class="example-wrapper">
-		<h1>Mon panier</h1>
+		<h1>Mon panier abonnement</h1>
 
 		Retrouver l'ensemble des produits
 		<hr>
@@ -49,7 +49,7 @@
                         <a href="{{ path('decrease' , { 'id' : abonnement.abonnement.id}) }}">
 								<img src="{{ asset('/assets/images/minus.png') }}" height="14px"></a>
                                 
-                            x {{product.quantity}}
+                            x {{abonnement.quantity}}
                             
                             <a href="{{ path('cart_to_add' , { 'id' : abonnement.abonnement.id}) }}">
 								<img src="{{ asset('/assets/images/plus.png') }}" height="14px"></a>
@@ -60,7 +60,7 @@
 							€</td>
 						
 						<td>
-							<a href="{{ path('delete_to_cart' , { 'id' : abonnement.abonnement.id}) }}"><img src="{{ asset('/assets/images/trash.png') }}" height="18px"></a>
+							<a href="{{ path('cart_to_delete' , { 'id' : abonnement.abonnement.id}) }}"><img src="{{ asset('/assets/images/trash.png') }}" height="18px"></a>
 						</td>
 					</tr>
 					{% set total = total + (abonnement.abonnement.prix * abonnement.quantity) %}
@@ -74,7 +74,7 @@
 				Total :
 				{{ (total / 100) | number_format(2, ',', '.') }} €
 			</b>
-			<a href="{{ path('order')}}" class="btn btn-success btn-block">Valider mon panier</a>
+			<a href="{{ path('Subscribe_order')}}" class="btn btn-success btn-block">Valider mon panier</a>
 		</div>
         {% else %}
             <hr>
@@ -82,3 +82,4 @@
         {% endif %}
 	</div>
 {% endblock %}
+{% include 'footer.html.twig' %}

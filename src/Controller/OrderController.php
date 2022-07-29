@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Classe\Cart;
+use App\Classe\SubscribeCart;
 use App\Entity\Order;
 use App\Entity\OrderDetails;
 use App\Entity\Product;
@@ -50,6 +51,29 @@ class OrderController extends AbstractController
     }
 
 
+    #[Route('/commande/abonnement', name: 'Subscribe_order')]
+    public function SubscribeOrder(SubscribeCart $cart, Request $request): Response
+    {
+
+
+        $form = $this->createForm(OrderType::class, null, [
+            "user" => $this->getUser(),
+
+        ]);
+
+        $form->handlerequest($request);
+
+        if ($form->isSubmitted() &&  $form->isValid()) {
+        }
+        return $this->render(
+            'order/recap_abonnement.html.twig',
+            [
+                'form' => $form->createView(),
+                'cart' => $cart->getFullSubscribe()
+            ]
+        );
+    }
+
     #[Route('/commande/recap', name: 'order_recap')]
     public function add(Cart $cart, Request $request): Response
     {
@@ -87,7 +111,6 @@ class OrderController extends AbstractController
 
             $product_stripe[] = [
                 'price_data' => [
-
                     'currency' => 'eur',
                     'product_data' => [
                         'name' => $product['product']->getName(),
@@ -121,6 +144,55 @@ class OrderController extends AbstractController
             [
                 'cart' => $cart->getFull(),
                 'stripe_checkout_session' => $checkout_session->id
+            ]
+        );
+    }
+
+
+    #[Route('/commande/recap-abonnement', name: 'order_subscribe_recap')]
+    public function add_subscribe(SubscribeCart $cart, Request $request): Response
+    {
+        $YOUR_DOMAIN = 'http://localhost:8000';
+
+        $form = $this->createForm(OrderType::class, null, [
+            "user" => $this->getUser()
+        ]);
+
+        $form->handlerequest($request);
+       
+      
+
+        $date = new DateTimeImmutable();
+        $order = new Order();
+        $order->setUser($this->getUser());
+        $order->setCreatedAt($date);
+        $order->setIsPaid(0);
+
+        $this->entityManager->persist($order);
+
+
+        foreach ($cart->getFullSubscribe() as $abonnement) {
+
+            $orderDetails = new OrderDetails();
+
+            $orderDetails->setMyOrder($order);
+            $orderDetails->setProduct($abonnement['abonnement']->getNom());
+            $orderDetails->setQuantity($abonnement['quantity']);
+            $orderDetails->setPrice($abonnement["abonnement"]->getPrix());
+            $orderDetails->setTotal($abonnement["abonnement"]->getPrix() * $abonnement['quantity']);
+            $this->entityManager->persist($orderDetails);
+
+
+        }
+        //dd($abonnement_stripe);
+         $this->entityManager->flush();
+
+      
+
+        return $this->render(
+            'order/add_abonnement.html.twig',
+            [
+                'cart' => $cart->getFullSubscribe(),
             ]
         );
     }

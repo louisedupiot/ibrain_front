@@ -1,0 +1,40 @@
+{% include 'base.html.twig' %}
+
+<title>{% block title %}Abonnement{% endblock %}</title>
+{% block content %}
+    <h2> Je passe ma commande</h2>
+    <p>Choisissez vos préférences avant de passer votre commande</p>
+    <div class = "col-md-6">
+    <b>Récap de ma commande</b><br>
+<table class="table table-bordered">
+<tbody>
+				{% set total = null %}
+				{% for abonnement in cart %}
+					<tr>
+						<th scope="row">1</th>
+						<td>
+							<img src="/uploads/{{abonnement.abonnement.illustration}}" alt=" {{abonnement.abonnement.nom}} " height="75px">
+							<br/></td>
+						<td>
+							{{abonnement.abonnement.nom}}</td>
+						<td>{{ ((abonnement.abonnement.prix * abonnement.quantity) / 100)| number_format(2, ',', '.') }}
+							€</td>
+					</tr>
+					{% set total = total + (abonnement.abonnement.prix * abonnement.quantity) %}
+				{% endfor %}
+			</tbody>
+    </table>
+    <div class="text-right mb-5">
+			<b>Nombre de produit:
+				{{cart|length}}</b><br/>
+			<b>
+				Total :
+				{{ (total / 100) | number_format(2, ',', '.') }} €
+			</b>
+		</div>
+        {{ form(form ,{action:path('order_subscribe_recap')}) }}
+       
+       
+
+        
+{% endblock %}
