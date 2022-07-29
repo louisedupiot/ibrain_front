@@ -9,28 +9,24 @@
 {% block body %}
 
 
-	<h1 class="grand-titre">Notre Abonnements</h1>
+	<h1 class="grand-titre">Nos abonnements</h1>
 
-	<div class="div-filtre">
-		<h3>Filtrer</h3>
-		</div>
-		<h3>Nos produits</h3>
-		<div class="div-produits">
-            
-			{% for abs in abonnements %}
-                {% dump(abs.Nom) %}
-				<div class="col-md-4">
-					<div class="bloc-produit">
-						<a href="{{path("abonnement" , {'slug' : abs.slug }) }}">
-							<img class="abonnements" src="/uploads/{{ abs.illustration }}" alt="{{ abs.Nom }}" height="200px" width="200px"></a>
-						<h5>{{ abs.Nom }}</h5>
-						<hr>
-						<span class="product-price">{{ (abs.Prix / 100)| number_format(2, ',', '.') }}
-							€</span>
-					</div>
+	<h3>Nos produits</h3>
+	<div class="div-produits">
+
+		{% for abs in abonnements %}
+			{% dump(abs.Nom) %}
+			<div class="col-md-4">
+				<div class="bloc-produit">
+					<a href="{{path("abonnement" , {'slug' : abs.slug }) }}">
+						<img class="abonnements" src="/uploads/{{ abs.illustration }}" alt="{{ abs.Nom }}" height="200px" width="200px"></a>
+					<h5>{{ abs.Nom }}</h5>
+					<hr>
+					<span class="product-price">{{ (abs.Prix / 100)| number_format(2, ',', '.') }}
+						€</span>
 				</div>
-			{% endfor %}
-		</div>
-	{% endblock %}
-	{% include 'footer.html.twig' %}
-
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
+{% include 'footer.html.twig' %}

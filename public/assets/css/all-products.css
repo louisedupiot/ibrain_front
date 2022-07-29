@@ -2,7 +2,6 @@ body {
   background-image: url("../images/fond_home_gris.jpg");
   background-size: cover;
   font-family: "Courier New", Courier, monospace;
-  padding-bottom: 30px;
 }
 
 .div-produits {
@@ -86,4 +85,11 @@ h3 {
   color: rgba(255, 255, 255, 1);
   background: rgba(250, 136, 54, 0.5);
   cursor: pointer;
+}
+
+.img-produit {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5); /* you can change the value also */
+  -webkit-transform-origin: center;
+  transform-origin: center;
 }
