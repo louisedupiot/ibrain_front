@@ -264,3 +264,7 @@ h2 .blocs-jeux {
   -webkit-filter: invert(1);
   filter: invert(1);
 }
+
+.div-compte {
+  font-family: "Courier New", Courier, monospace;
+}

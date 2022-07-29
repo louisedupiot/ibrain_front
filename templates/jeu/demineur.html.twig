@@ -1,82 +1,79 @@
 {% include 'base.html.twig' %}
 
-<title>{% block title %}Démineur{% endblock %}</title>
+<title>
+	{% block title %}Démineur
+	{% endblock %}
+</title>
 {% block content %}
-{# <style>
-</style> #}
+	{# <style>
+	</style> #}
 
 	<div class="body_demineur">
 		<div class="div_titre">
-			<h1 id="demineur_titre"> Jouer au Démineur </h1>
+			<h1 id="demineur_titre">
+				Jouer au Démineur
+			</h1>
 		</div>
 		<div class="div_jeu_demineur">
 
 			<div class="div_regles">
-				<h2 >Règles du jeu</h2>
+				<h2>Règles du jeu</h2>
 				<ul>
-					<li>Essaye d'éviter les bombes <img src='../assets/images/bobomb.png'  width='30px' height='30px'></li>
-					<li><img src='../assets/images/left-click.png'  width='30px' height='30px'> Ouvrir la case</li>
-					<li><img src='../assets/images/right-click.png'  width='30px' height='30px'> Poser/enlever un repère</li>
-					<li>Marque toutes les bombes <img src='../assets/images/bobomb.png'  width='30px' height='30px'> pour gagner </li>
+					<li>Essaye d'éviter les bombes
+						<img src='../assets/images/bobomb.png' width='30px' height='30px'></li>
+					<li><img src='../assets/images/left-click.png' width='30px' height='30px'>
+						Ouvrir la case</li>
+					<li><img src='../assets/images/right-click.png' width='30px' height='30px'>
+						Poser/enlever un repère</li>
+					<li>Marque toutes les bombes
+						<img src='../assets/images/bobomb.png' width='30px' height='30px'>
+						pour gagner
+					</li>
 				</ul>
 			</div>
 
 			<div class="div_parametres">
-				<h2 id="demineur_parametres_h2"> Paramètres de la partie </h2>
+				<h2 id="demineur_parametres_h2">
+					Paramètres de la partie
+				</h2>
 				<table>
 					<tr>
 						<td>Hauteur</td>
 						<td>
-							<input 	type="number" 
-									value="8" 
-									placeholder="Largeur"
-									id="x"
-									min="8"
-									max="11"/>
+							<input type="number" value="8" placeholder="Largeur" id="x" min="8" max="11"/>
 						</td>
 					</tr>
-					
+
 					<tr>
 						<td>Largeur</td>
 						<td>
-							<input 	type="number" 
-									value="8" 
-									placeholder="Hauteur"
-									id="y"
-									min="8"
-									max="11"/>
+							<input type="number" value="8" placeholder="Hauteur" id="y" min="8" max="11"/>
 						</td>
 					</tr>
-					
+
 					<tr>
 						<td>Nombre de bombes</td>
 						<td>
-							<input 	type="number" 
-									value="4" 
-									placeholder="Nombre de bombes"
-									id="nb_mine"
-									min="4"
-									max="15"/>
+							<input type="number" value="4" placeholder="Nombre de bombes" id="nb_mine" min="1" max="15"/>
 						</td>
 					</tr>
-					
-				
+
+
 				</table>
-				<input 	type="button" 
-									id="bouton_jouer"
-									value="Lancer" 
-									onClick="changerTerrain()"/>
+				<input type="button" id="bouton_jouer" value="Lancer" onclick="changerTerrain()"/>
 			</div>
-			
-			<div id="timer"></div>	
+
+			<div id="timer"></div>
 
 			<div id="plateau"></div>
 
 			<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
 			<script src="{{ asset('/assets/js/demineur.js') }}"></script>
 		</div>
-		<button onclick="topFunction()" id="bouton-scroll-top" title="Top"><i class="fa fa-angle-double-up"></i></button>
-<script src="{{ asset('/assets/js/buttonTop.js') }}"></script>
+		<button onclick="topFunction()" id="bouton-scroll-top" title="Top">
+			<i class="fa fa-angle-double-up"></i>
+		</button>
+		<script src="{{ asset('/assets/js/buttonTop.js') }}"></script>
 	</div>
 {% endblock %}
 {% include 'footer.html.twig' %}
