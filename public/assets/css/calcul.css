@@ -1,8 +1,8 @@
 .container { 
   border-radius:25px;
   background-color : #EADFC7;
-  height : 450px;
-  color : #EEA912;
+  height : 100%;
+  color : black;
 }
 
 h2 {
@@ -17,12 +17,12 @@ h2 {
 
 .que{
   position : absolute;
-  left : 10%;
+  left : 30%;
 }
 
 .sco {
   position : absolute;
-  right : 10%;
+  right : 30%;
 }
 
 .exp{
@@ -48,11 +48,11 @@ h2 {
 }
 
 .Symbole{
-  background : #DBD9D4;
-  margin-left : 760px;
+  background : #EEA912;
+  margin-left : 100px;
   margin-top : 30px;
   border : solid black 2px;
-  border-radius : 25px;
+  border-radius : 5px;
   height : 90px;
   width : 110px;
 }
@@ -66,11 +66,11 @@ h2 {
 }
 
 .level{
-  background : #DBD9D4;
-  margin-left : 1000px;
+  background : #EEA912;
+  margin-left : 600px;
   margin-top : -93px;
   border : solid black 2px;
-  border-radius : 25px;
+  border-radius : 5px;
   height : 90px;
   width : 110px;
 }
@@ -81,4 +81,48 @@ h2 {
 
 .button2{
   text-align : center;
+}
+
+.body_calcul {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 20px;
+}
+
+#calcul_titre {
+font-size: calc(1em + 8vmin);
+font-weight: 900;
+color: #fa8836;
+text-align: center;
+
+--x-offset: -0.0625em;
+--y-offset: 0.0625em;
+--stroke: 0.025em;
+--background-color: white;
+--stroke-color: #e3b947;
+
+text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color),
+  calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke))
+  0px var(--stroke-color);
+}
+
+.div_jeu_calcul {
+max-width: fit-content;
+margin: 1em auto;
+padding: 20px 80px 20px 80px;
+border: groove grey;
+border-width: 10px;
+display: flex;
+align-items: center;
+flex-direction: column;
+background-color: #d4d3d2;
+}
+
+.valid{
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(250, 136, 54, 1);
+  color: #FFF;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-size: 10pt;
 }

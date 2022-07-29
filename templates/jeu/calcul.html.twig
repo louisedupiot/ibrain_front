@@ -4,54 +4,61 @@
 <title>{% block title %}Calcul{% endblock %}
 		</title>
 {% block content %}
-    <div class="container">
+  <div class="container">
+
+    
+    <div class="body_calcul">
+		  <div class="div_titre">
+			  <h1 id="calcul_titre"> Calcul Mental </h1>
+		  </div>
+		  <div class="div_jeu_calcul">
+
+			<div class="div_regles">
+        <div id="score">
+          <p class="que">Question : 0/10</p>
+          <p class="sco">Score : 0/10</p>
+          <p class="exp">Expression : x </p>
+          <p class="niv">Niveau : 0</p>
+        </div>
+        <h1 class="select">  Selectionne un Symbole et un niveau </h1>
  
-      <!-- affiche le score du joueur -->
-      <h2>Ibrain</h2>
-      <div id="score">
-        <p class="que">Question : 0/10</p>
-        <p class="sco">Score : 0/10</p>
-        <p class="exp">Expression : x </p>
-        <p class="niv">Niveau : 0</p>
-      </div>
-      <h1 class="select">  Selectionne un Symbole et un niveau </h1>
- 
-    <div class = "Symbole">
-      <!-- affiche le niveau de difficulté -->
-        <p class="symb font-weight-bold">Symbole</p>
-          <div class = "button">
-        <button value='+' onclick="setExpression(this)">+</button>
-        <button value='-' onclick="setExpression(this)">-</button>
-        <button value='x' onclick="setExpression(this)">x</button>
-         </div>
-    </div>
-         
-      <div class = "level">
-        <p class="niveau font-weight-bold">Niveau</p>
-           <div class = "button2">
-        <button value="1" onclick="setLevel(this)">1</button>
-        <button  value="2" onclick="setLevel(this)">2</button>
-        <button value="3" onclick="setLevel(this)">3</button>
+        <div class = "Symbole">
+          <!-- affiche le niveau de difficulté -->
+          <p class="symb font-weight-bold">Symbole</p>
+            <div class = "button">
+              <button value='+' onclick="setExpression(this)">+</button>
+              <button value='-' onclick="setExpression(this)">-</button>
+              <button value='x' onclick="setExpression(this)">x</button>
+            </div>
+        </div>
+
+        <div class = "level">
+          <p class="niveau font-weight-bold">Niveau</p>
+          <div class = "button2">
+            <button value="1" onclick="setLevel(this)">1</button>
+            <button  value="2" onclick="setLevel(this)">2</button>
+            <button value="3" onclick="setLevel(this)">3</button>
           </div>
-      </div>
-    </div>
+        </div>
+			</div>
 
-    <div id="Calcul" >
+      <div id="Calcul">
       <!-- affiche le calcul à faire -->
-      <div class="input-group input-group-lg p-5">
+        <div class="input-group input-group-lg p-5">
+        
+        </div>     
+      </div>
 
-      </div>     
-    </div>
-  </div>
-
-    <div id="result" >
+      <div id="result" >
       <!-- affiche le résulat si bon ou mauvais -->
-      <div class="p-5">
+        <div class="p-5">
         </div>
       </div>
   </div>
+  </div>
+  </div>
 
-
-		<script src="{{ asset('/assets/js/calcul.js') }}"></script>
+	<script src="{{ asset('/assets/js/calcul.js') }}"></script>
 
 {% endblock %}
+{% include 'footer.html.twig' %}
